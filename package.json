@@ -1,30 +1,31 @@
 {
-  "name": "jspm-ionic2-starter",
+  "name": "npm3-ionic2-starter",
   "version": "1.0.0",
-  "description": "JSPM Ionic2 with Typescript starter",
+  "description": "NPM3 Ionic2 with Typescript starter",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vadimpopa/jspm-ionic2-starter.git"
+    "url": "git+https://github.com/evollu/npm3-ionic2-starter.git"
   },
   "keywords": [
-    "jspm",
+    "npm3",
     "ionic2",
     "typescript",
     "starter",
     "kickstarter"
   ],
-  "author": "vadimvpopa@gmail.com",
+  "author": "Libin Lu",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vadimpopa/jspm-ionic2-starter/issues"
-  },
-  "homepage": "https://github.com/vadimpopa/jspm-ionic2-starter#readme",
   "devDependencies": {
+    "browserify": "^12.0.1",
+    "browserify-css": "^0.8.1",
+    "browserify-shim": "^3.8.11",
+    "css-loader": "^0.23.0",
     "del": "^2.0.2",
+    "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cached": "^1.1.0",
@@ -45,25 +46,29 @@
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.2.0",
-    "jspm": "^0.16.13",
+    "node-sass": "^3.4.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
-    "systemjs-builder": "^0.14.11"
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "systemjs-builder": "^0.14.11",
+    "ts-loader": "^0.7.1",
+    "tsify": "^0.12.2",
+    "url-loader": "^0.5.7",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1"
   },
   "dependencies": {
-    "cordova": "^5.3.3"
+    "cordova": "^5.3.3",
+    "ionic-framework": "^2.0.0-alpha.34"
   },
-  "jspm": {
-    "configFile": "system.config.js",
-    "dependencies": {
-      "css": "github:systemjs/plugin-css@^0.1.19",
-      "ionic": "npm:ionic-framework@2.0.0-alpha.34",
-      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
-      "ts": "github:frankwallis/plugin-typescript@^2.1.6"
-    },
-    "devDependencies": {
-      "clean-css": "npm:clean-css@^3.4.6",
-      "typescript": "npm:typescript@^1.6.2"
-    }
+  "browser": {},
+  "browserify-css": {
+    "autoInject": true
+  },
+  "browserify": {
+    "transform": [
+      "browserify-css"
+    ]
   }
 }

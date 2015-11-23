@@ -1,7 +1,4 @@
-import "./app.css!";
-import 'zone.js';
-import 'reflect-metadata';
-import 'web-animations';
+import "./app.scss";
 import {App, IonicApp, Platform} from 'ionic/ionic';
 
 import {HelloIonicPage} from './hello-ionic/hello-ionic';

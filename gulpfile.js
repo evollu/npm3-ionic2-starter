@@ -15,7 +15,7 @@ var gulp = require('gulp');
 var requireDir = require('require-dir');
 
 
-global.IONIC_DIR = './jspm_packages/npm/ionic-framework@2.0.0-alpha.34/dist/';
+global.IONIC_DIR = './node_modules/ionic-framework/dist/';
 
 // Specify paths & globbing patterns for tasks.
 global.paths = {
@@ -59,6 +59,36 @@ global.app = {
 
 // Require all tasks in the 'gulp' folder.
 requireDir('./gulp', { recurse: false });
+
+gulp.task('b', function(){
+  var browserify = require('browserify');
+  var source = require('vinyl-source-stream');
+  var watchify = require('watchify');
+  var tsify = require('tsify');
+  
+  return browserify([
+    global.IONIC_DIR+'js/web-animations.min.js', 
+    './www/app.js'], {
+    debug: true,
+  }).bundle()
+    .pipe(source('build.js'))
+    .pipe(gulp.dest('./'));
+  
+  //  var watcher  = watchify(browserify(['./node_modules/ionic-framework/dist/js/web-animations.min.js', './www/app.js', {
+  //   debug: true
+  // }));
+
+  // return watcher.on('update', function () {
+  //   watcher.bundle()
+  //     .pipe(source('build.js'))
+  //     .pipe(gulp.dest('./'))
+  //     console.log('Updated');
+  // })
+  //   .bundle()
+  //   .pipe(source('build.js'))
+  //   .pipe(gulp.dest('./'));
+    
+})
 
 // Default task; start local server & watch for changes.
 gulp.task('default', ['sass', 'fonts', 'ts', 'connect', 'watch']);

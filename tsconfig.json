@@ -1,11 +1,11 @@
 {
 	"compilerOptions": {
 		"target": "ES5",
-		"module": "system",
+		"module": "commonjs",
 		"emitDecoratorMetadata": true,
     	"experimentalDecorators": true
 	},
-	"files": [
-		"app"
+	"exclude": [
+		"node_modules"
 	]
 }
