@@ -1,5 +1,5 @@
 import "./app.scss";
-import {App, IonicApp, Platform} from 'ionic/ionic';
+import {App, IonicApp, Platform, StatusBar} from 'ionic/ionic';
 
 import {HelloIonicPage} from './hello-ionic/hello-ionic';
 import {ListPage} from './list/list';
