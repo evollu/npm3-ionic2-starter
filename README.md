@@ -3,6 +3,6 @@ JSPM + Ionic2 + Typescript starter
 
 
 Commands to start the app
-1. npm install
-2. jspm install
-3. gulp
+1. npm install -g npm3
+2. npm3 install
+3. gulp webpack
