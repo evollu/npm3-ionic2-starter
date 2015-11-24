@@ -1,5 +1,4 @@
-# jspm-ionic2-starter
-JSPM + Ionic2 + Typescript starter
+# npm3-ionic2-starter
 
 
 Commands to start the app
